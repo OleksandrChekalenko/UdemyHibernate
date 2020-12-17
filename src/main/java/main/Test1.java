@@ -12,12 +12,13 @@ public class Test1 {
                 addAnnotatedClass(Employee.class).
                 buildSessionFactory();
         Session session = factory.getCurrentSession();
-        Employee employee = new Employee("Alex", "Dicker", "IT", 2000);
+        Employee employee = new Employee("Victor", "Johnson", "HR", 750);
 
         try {
             session.beginTransaction();
             session.save(employee);
             session.getTransaction().commit();
+            System.out.println("Done!");
         } finally {
             factory.close();
         }
